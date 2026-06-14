@@ -1,0 +1,2 @@
+# Character prefabs are generated here by the "Shoresy ▸ Build Character Prefabs & Anims" editor menu.
+# They reference the FBX under Assets/Art/Generated (no duplication) and are loaded at runtime by SkaterVisual.

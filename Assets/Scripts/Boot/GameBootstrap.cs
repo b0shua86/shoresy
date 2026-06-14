@@ -95,14 +95,15 @@ namespace Hockey.Boot
 
         static void SpawnTeam(Transform parent, MatchManager mm, GameConfig config, TeamSide side)
         {
-            Color col = side == TeamSide.Home ? new Color(0.0f, 0.55f, 0.55f) : new Color(0.72f, 0.10f, 0.12f);
+            // Fallback capsule colours (used until the generated models are bound): royal blue / orange.
+            Color col = side == TeamSide.Home ? new Color(0.10f, 0.22f, 0.65f) : new Color(0.85f, 0.35f, 0.06f);
             for (int i = 0; i < config.playersPerSide; i++)
-                SpawnSkater(parent, mm, config, side, FormationUtil.RoleForIndex(i, config.playersPerSide), col, 10 + i);
+                SpawnSkater(parent, mm, config, side, FormationUtil.RoleForIndex(i, config.playersPerSide), col, 10 + i, i);
             if (config.useGoalies)
-                SpawnSkater(parent, mm, config, side, PlayerRole.Goalie, col, 1);
+                SpawnSkater(parent, mm, config, side, PlayerRole.Goalie, col, 1, 0);
         }
 
-        static void SpawnSkater(Transform parent, MatchManager mm, GameConfig config, TeamSide side, PlayerRole role, Color col, int number)
+        static void SpawnSkater(Transform parent, MatchManager mm, GameConfig config, TeamSide side, PlayerRole role, Color col, int number, int index)
         {
             var go = GameObject.CreatePrimitive(PrimitiveType.Capsule);
             go.name = $"{side}_{role}_{number}";
@@ -121,6 +122,9 @@ namespace Hockey.Boot
 
             go.AddComponent<AIController>().Skill = skill;
             mm.Register(skater);
+
+            // Bind the generated character model (no-op fallback to the capsule if it isn't built yet).
+            go.AddComponent<SkaterVisual>().resourceName = CharacterRoster.Resolve(side, role, index);
 
             // small white nose so the capsule's facing is readable
             var nose = GameObject.CreatePrimitive(PrimitiveType.Cube);
