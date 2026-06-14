@@ -1,82 +1,195 @@
 {
   "_comment": "Original, IP-free assets. Characters are generic archetypes described purely by appearance; no real people, shows, teams, or trademarks are referenced. Jerseys are PLAIN and crest-free (a consistent team crest + numbers will be applied as a decal in Unity). meshy-6 + HD textures for realistic humans; rig=true on characters. Home = royal-blue/white, Away = burnt-orange/black. The star (home leader) is generated separately. priority 1 = essential, 2 = depth, 3 = nice-to-have.",
   "defaults": {
-    "ai_model": "meshy-6", "model_type": "standard", "topology": "quad",
-    "target_polycount": 40000, "target_formats": ["fbx"], "enable_pbr": true,
-    "hd_texture": true, "rig": false, "pose_mode": "a-pose",
-    "negative_prompt": "nike, adidas, reebok, NHL, real team logo, sponsor logo, brand name, watermark, signature, jersey number, text, lettering, blurry, deformed, disfigured, extra limbs, extra fingers, mannequin, plastic skin, smooth featureless face, cartoon, lowpoly, toy"
+    "ai_model": "meshy-6",
+    "model_type": "standard",
+    "topology": "quad",
+    "target_polycount": 40000,
+    "target_formats": [
+      "fbx"
+    ],
+    "enable_pbr": true,
+    "hd_texture": true,
+    "rig": false,
+    "pose_mode": "a-pose",
+    "negative_prompt": "nike, adidas, reebok, NHL, real team logo, sponsor logo, brand name, watermark, signature, jersey number, text, lettering, blurry, deformed, disfigured, extra limbs, extra fingers, mannequin, plastic skin, smooth featureless face, cartoon, lowpoly, toy, american football, football, football helmet, helmet, face cage, shoulder pads, rugby, soccer, basketball, cleats, sneakers, short sleeves, t-shirt, tank top"
   },
   "assets": [
-    { "id": "skater_home_captain", "category": "character", "rig": true, "priority": 1, "height_meters": 1.83,
-      "prompt": "Veteran Canadian ice-hockey captain, around 40, sturdy athletic build. Short greying brown hair, a neat greying stubble beard, weathered determined face, strong brow. He wears a plain royal-blue and white hockey jersey with no crest or logo, padded shorts, shin guards, gloves and ice skates. Full body, neutral A-pose, arms slightly out, photorealistic detailed face and skin, game-ready.",
-      "texture_prompt": "photorealistic human skin with pores and grey stubble, short greying brown hair, plain royal-blue and white hockey jersey fabric, no logos, no crest, no text, no numbers" },
-
-    { "id": "skater_home_winger", "category": "character", "rig": true, "priority": 1, "height_meters": 1.78,
-      "prompt": "Fast young Canadian hockey winger, early 20s, slim athletic build. Short tousled light-brown hair, clean-shaven boyish face, eager expression. He wears a plain royal-blue and white hockey jersey with no crest or logo, padded shorts, shin guards, gloves and ice skates. Full body, neutral A-pose, arms slightly out, photorealistic detailed face and skin, game-ready.",
-      "texture_prompt": "photorealistic young clean-shaven skin, short light-brown hair, plain royal-blue and white hockey jersey fabric, no logos, no crest, no text, no numbers" },
-
-    { "id": "skater_away_captain", "category": "character", "rig": true, "priority": 1, "height_meters": 1.84,
-      "prompt": "Arrogant rival hockey captain, early 30s, athletic confident build. Slicked-back black hair, a sharp black goatee, smug sneering face, intense eyes. He wears a plain burnt-orange and black hockey jersey with no crest or logo, padded shorts, shin guards, gloves and ice skates. Full body, neutral A-pose, arms slightly out, photorealistic detailed face and skin, game-ready.",
-      "texture_prompt": "photorealistic skin with pores, slicked-back black hair, sharp black goatee, plain burnt-orange and black hockey jersey fabric, no logos, no crest, no text, no numbers" },
-
-    { "id": "skater_away_winger", "category": "character", "rig": true, "priority": 1, "height_meters": 1.80,
-      "prompt": "Cocky rival hockey sniper, mid-20s, lean athletic build. Short blond buzz-cut hair, light stubble, smirking confident face. He wears a plain burnt-orange and black hockey jersey with no crest or logo, padded shorts, shin guards, gloves and ice skates. Full body, neutral A-pose, arms slightly out, photorealistic detailed face and skin, game-ready.",
-      "texture_prompt": "photorealistic skin with light stubble, blond buzz-cut hair, plain burnt-orange and black hockey jersey fabric, no logos, no crest, no text, no numbers" },
-
-    { "id": "goalie_home", "category": "character", "rig": true, "priority": 1, "height_meters": 1.85, "target_polycount": 45000,
+    {
+      "id": "skater_home_captain",
+      "category": "character",
+      "rig": true,
+      "priority": 1,
+      "height_meters": 1.83,
+      "prompt": "Veteran Canadian ice-hockey captain, around 40, sturdy athletic build. Short greying brown hair, a neat greying stubble beard, weathered determined face, strong brow. He wears a plain royal-blue and white long-sleeved ice-hockey sweater with no crest or logo, padded shorts, shin guards, gloves and ice skates. Bare head, hair visible, no helmet. Full body, neutral A-pose, arms slightly out, photorealistic detailed face and skin, game-ready.",
+      "texture_prompt": "photorealistic human skin with pores and grey stubble, short greying brown hair, plain royal-blue and white long-sleeved ice-hockey sweater fabric, no logos, no crest, no text, no numbers"
+    },
+    {
+      "id": "skater_home_winger",
+      "category": "character",
+      "rig": true,
+      "priority": 1,
+      "height_meters": 1.78,
+      "prompt": "Fast young Canadian hockey winger, early 20s, slim athletic build. Short tousled light-brown hair, clean-shaven boyish face, eager expression. He wears a plain royal-blue and white long-sleeved ice-hockey sweater with no crest or logo, padded shorts, shin guards, gloves and ice skates. Bare head, hair visible, no helmet. Full body, neutral A-pose, arms slightly out, photorealistic detailed face and skin, game-ready.",
+      "texture_prompt": "photorealistic young clean-shaven skin, short light-brown hair, plain royal-blue and white long-sleeved ice-hockey sweater fabric, no logos, no crest, no text, no numbers"
+    },
+    {
+      "id": "skater_away_captain",
+      "category": "character",
+      "rig": true,
+      "priority": 1,
+      "height_meters": 1.84,
+      "prompt": "Arrogant rival hockey captain, early 30s, athletic confident build. Slicked-back black hair, a sharp black goatee, smug sneering face, intense eyes. He wears a plain burnt-orange and black long-sleeved ice-hockey sweater with no crest or logo, padded shorts, shin guards, gloves and ice skates. Bare head, hair visible, no helmet. Full body, neutral A-pose, arms slightly out, photorealistic detailed face and skin, game-ready.",
+      "texture_prompt": "photorealistic skin with pores, slicked-back black hair, sharp black goatee, plain burnt-orange and black long-sleeved ice-hockey sweater fabric, no logos, no crest, no text, no numbers"
+    },
+    {
+      "id": "skater_away_winger",
+      "category": "character",
+      "rig": true,
+      "priority": 1,
+      "height_meters": 1.8,
+      "prompt": "Cocky rival hockey sniper, mid-20s, lean athletic build. Short blond buzz-cut hair, light stubble, smirking confident face. He wears a plain burnt-orange and black long-sleeved ice-hockey sweater with no crest or logo, padded shorts, shin guards, gloves and ice skates. Bare head, hair visible, no helmet. Full body, neutral A-pose, arms slightly out, photorealistic detailed face and skin, game-ready.",
+      "texture_prompt": "photorealistic skin with light stubble, blond buzz-cut hair, plain burnt-orange and black long-sleeved ice-hockey sweater fabric, no logos, no crest, no text, no numbers"
+    },
+    {
+      "id": "goalie_home",
+      "category": "character",
+      "rig": true,
+      "priority": 1,
+      "height_meters": 1.85,
+      "target_polycount": 45000,
       "prompt": "Canadian ice-hockey goaltender in full goalie gear, athletic build. Wearing a goalie mask with a simple original paint design, large royal-blue and white leg pads, a blocker and a catching glove, a chest protector, and a plain royal-blue and white goalie jersey with no crest, plus ice skates. Full body, neutral A-pose, arms slightly out, photorealistic detailed gear, game-ready.",
-      "texture_prompt": "photorealistic royal-blue and white goalie pads and jersey fabric, plain goalie mask with a simple original paint design, no logos, no crest, no brand names, no text, no numbers" },
-
-    { "id": "puck", "category": "prop", "rig": false, "hd_texture": false, "topology": "triangle", "priority": 1, "target_polycount": 3000,
+      "texture_prompt": "photorealistic royal-blue and white goalie pads and jersey fabric, plain goalie mask with a simple original paint design, no logos, no crest, no brand names, no text, no numbers",
+      "negative_prompt": "nike, adidas, reebok, NHL, real team logo, sponsor logo, brand name, watermark, signature, jersey number, text, lettering, american football, football, shoulder pads, cleats, sneakers, blurry, deformed, disfigured, extra limbs, extra fingers, mannequin, plastic skin, cartoon, lowpoly, toy"
+    },
+    {
+      "id": "puck",
+      "category": "prop",
+      "rig": false,
+      "hd_texture": false,
+      "topology": "triangle",
+      "priority": 1,
+      "target_polycount": 3000,
       "prompt": "A standard black vulcanized rubber ice-hockey puck, plain matte black disc, slightly worn edges, no logo or text, realistic, game-ready.",
-      "texture_prompt": "plain matte black rubber, no logo, no text, no markings" },
-
-    { "id": "net", "category": "prop", "rig": false, "hd_texture": false, "topology": "triangle", "priority": 1, "target_polycount": 8000,
+      "texture_prompt": "plain matte black rubber, no logo, no text, no markings"
+    },
+    {
+      "id": "net",
+      "category": "prop",
+      "rig": false,
+      "hd_texture": false,
+      "topology": "triangle",
+      "priority": 1,
+      "target_polycount": 8000,
       "prompt": "A standard ice-hockey goal net: red tubular metal frame with a white mesh net and a red base, regulation shape, no logo, realistic, game-ready.",
-      "texture_prompt": "red painted metal frame, white nylon mesh net, no logo, no text" },
-
-    { "id": "stick", "category": "prop", "rig": false, "hd_texture": false, "topology": "triangle", "priority": 1, "target_polycount": 4000,
+      "texture_prompt": "red painted metal frame, white nylon mesh net, no logo, no text"
+    },
+    {
+      "id": "stick",
+      "category": "prop",
+      "rig": false,
+      "hd_texture": false,
+      "topology": "triangle",
+      "priority": 1,
+      "target_polycount": 4000,
       "prompt": "A modern one-piece composite ice-hockey stick, plain matte black shaft with a slightly curved blade wrapped in black tape, no logo or text, realistic, game-ready.",
-      "texture_prompt": "plain matte black composite with black tape on the blade, no logo, no brand name, no text" },
-
-    { "id": "skater_home_defender", "category": "character", "rig": true, "priority": 2, "height_meters": 1.90,
-      "prompt": "Big tough Canadian defenceman, around 30, tall and powerfully built with broad shoulders. Short dark hair, a thick full dark beard, stern serious face. He wears a plain royal-blue and white hockey jersey with no crest or logo, padded shorts, shin guards, gloves and ice skates. Full body, neutral A-pose, arms slightly out, photorealistic detailed face and skin, game-ready.",
-      "texture_prompt": "photorealistic human skin with pores, thick dark full beard, short dark hair, plain royal-blue and white hockey jersey fabric, no logos, no crest, no text, no numbers" },
-
-    { "id": "skater_home_grinder", "category": "character", "rig": true, "priority": 2, "height_meters": 1.80,
-      "prompt": "Gritty Canadian depth forward, late 20s, stocky muscular build. Short buzz-cut brown hair, a thin chin-strap beard, missing-tooth grin, scrappy expression. He wears a plain royal-blue and white hockey jersey with no crest or logo, padded shorts, shin guards, gloves and ice skates. Full body, neutral A-pose, arms slightly out, photorealistic detailed face and skin, game-ready.",
-      "texture_prompt": "photorealistic rugged skin with pores, buzz-cut brown hair, thin chin-strap beard, plain royal-blue and white hockey jersey fabric, no logos, no crest, no text, no numbers" },
-
-    { "id": "skater_home_rookie", "category": "character", "rig": true, "priority": 2, "height_meters": 1.79,
-      "prompt": "Nervous teenage Canadian rookie hockey player, about 18, lean lanky build. Short neat sandy-blond hair, clean-shaven youthful face, wide-eyed anxious expression, freckles. He wears a plain royal-blue and white hockey jersey with no crest or logo, padded shorts, shin guards, gloves and ice skates. Full body, neutral A-pose, arms slightly out, photorealistic detailed face and skin, game-ready.",
-      "texture_prompt": "photorealistic youthful freckled clean-shaven skin, sandy-blond hair, plain royal-blue and white hockey jersey fabric, no logos, no crest, no text, no numbers" },
-
-    { "id": "skater_away_enforcer", "category": "character", "rig": true, "priority": 2, "height_meters": 1.95,
-      "prompt": "Huge intimidating hockey enforcer, early 30s, very tall and massively muscular. Shaved bald head, a thick dark goatee, scarred menacing face, broken nose. He wears a plain burnt-orange and black hockey jersey with no crest or logo, padded shorts, shin guards, gloves and ice skates. Full body, neutral A-pose, arms slightly out, photorealistic detailed face and skin, game-ready.",
-      "texture_prompt": "photorealistic rugged scarred skin with pores, shaved bald head, thick dark goatee, plain burnt-orange and black hockey jersey fabric, no logos, no crest, no text, no numbers" },
-
-    { "id": "skater_away_grinder", "category": "character", "rig": true, "priority": 2, "height_meters": 1.77,
-      "prompt": "Wiry rival pest forward, mid-20s, thin scrappy build. Greasy shoulder-length dark hair, a patchy thin moustache, sly irritating grin. He wears a plain burnt-orange and black hockey jersey with no crest or logo, padded shorts, shin guards, gloves and ice skates. Full body, neutral A-pose, arms slightly out, photorealistic detailed face and skin, game-ready.",
-      "texture_prompt": "photorealistic skin with pores, greasy shoulder-length dark hair, patchy thin moustache, plain burnt-orange and black hockey jersey fabric, no logos, no crest, no text, no numbers" },
-
-    { "id": "goalie_away", "category": "character", "rig": true, "priority": 2, "height_meters": 1.85, "target_polycount": 45000,
+      "texture_prompt": "plain matte black composite with black tape on the blade, no logo, no brand name, no text"
+    },
+    {
+      "id": "skater_home_defender",
+      "category": "character",
+      "rig": true,
+      "priority": 2,
+      "height_meters": 1.9,
+      "prompt": "Big tough Canadian defenceman, around 30, tall and powerfully built with broad shoulders. Short dark hair, a thick full dark beard, stern serious face. He wears a plain royal-blue and white long-sleeved ice-hockey sweater with no crest or logo, padded shorts, shin guards, gloves and ice skates. Bare head, hair visible, no helmet. Full body, neutral A-pose, arms slightly out, photorealistic detailed face and skin, game-ready.",
+      "texture_prompt": "photorealistic human skin with pores, thick dark full beard, short dark hair, plain royal-blue and white long-sleeved ice-hockey sweater fabric, no logos, no crest, no text, no numbers"
+    },
+    {
+      "id": "skater_home_grinder",
+      "category": "character",
+      "rig": true,
+      "priority": 2,
+      "height_meters": 1.8,
+      "prompt": "Gritty Canadian depth forward, late 20s, stocky muscular build. Short buzz-cut brown hair, a thin chin-strap beard, missing-tooth grin, scrappy expression. He wears a plain royal-blue and white long-sleeved ice-hockey sweater with no crest or logo, padded shorts, shin guards, gloves and ice skates. Bare head, hair visible, no helmet. Full body, neutral A-pose, arms slightly out, photorealistic detailed face and skin, game-ready.",
+      "texture_prompt": "photorealistic rugged skin with pores, buzz-cut brown hair, thin chin-strap beard, plain royal-blue and white long-sleeved ice-hockey sweater fabric, no logos, no crest, no text, no numbers"
+    },
+    {
+      "id": "skater_home_rookie",
+      "category": "character",
+      "rig": true,
+      "priority": 2,
+      "height_meters": 1.79,
+      "prompt": "Nervous teenage Canadian rookie hockey player, about 18, lean lanky build. Short neat sandy-blond hair, clean-shaven youthful face, wide-eyed anxious expression, freckles. He wears a plain royal-blue and white long-sleeved ice-hockey sweater with no crest or logo, padded shorts, shin guards, gloves and ice skates. Bare head, hair visible, no helmet. Full body, neutral A-pose, arms slightly out, photorealistic detailed face and skin, game-ready.",
+      "texture_prompt": "photorealistic youthful freckled clean-shaven skin, sandy-blond hair, plain royal-blue and white long-sleeved ice-hockey sweater fabric, no logos, no crest, no text, no numbers"
+    },
+    {
+      "id": "skater_away_enforcer",
+      "category": "character",
+      "rig": true,
+      "priority": 2,
+      "height_meters": 1.95,
+      "prompt": "Huge intimidating hockey enforcer, early 30s, very tall and massively muscular. Shaved bald head, a thick dark goatee, scarred menacing face, broken nose. He wears a plain burnt-orange and black long-sleeved ice-hockey sweater with no crest or logo, padded shorts, shin guards, gloves and ice skates. Bare head, hair visible, no helmet. Full body, neutral A-pose, arms slightly out, photorealistic detailed face and skin, game-ready.",
+      "texture_prompt": "photorealistic rugged scarred skin with pores, shaved bald head, thick dark goatee, plain burnt-orange and black long-sleeved ice-hockey sweater fabric, no logos, no crest, no text, no numbers"
+    },
+    {
+      "id": "skater_away_grinder",
+      "category": "character",
+      "rig": true,
+      "priority": 2,
+      "height_meters": 1.77,
+      "prompt": "Wiry rival pest forward, mid-20s, thin scrappy build. Greasy shoulder-length dark hair, a patchy thin moustache, sly irritating grin. He wears a plain burnt-orange and black long-sleeved ice-hockey sweater with no crest or logo, padded shorts, shin guards, gloves and ice skates. Bare head, hair visible, no helmet. Full body, neutral A-pose, arms slightly out, photorealistic detailed face and skin, game-ready.",
+      "texture_prompt": "photorealistic skin with pores, greasy shoulder-length dark hair, patchy thin moustache, plain burnt-orange and black long-sleeved ice-hockey sweater fabric, no logos, no crest, no text, no numbers"
+    },
+    {
+      "id": "goalie_away",
+      "category": "character",
+      "rig": true,
+      "priority": 2,
+      "height_meters": 1.85,
+      "target_polycount": 45000,
       "prompt": "Rival ice-hockey goaltender in full goalie gear, athletic build. Wearing a goalie mask with a simple original paint design, large burnt-orange and black leg pads, a blocker and a catching glove, a chest protector, and a plain burnt-orange and black goalie jersey with no crest, plus ice skates. Full body, neutral A-pose, arms slightly out, photorealistic detailed gear, game-ready.",
-      "texture_prompt": "photorealistic burnt-orange and black goalie pads and jersey fabric, plain goalie mask with a simple original paint design, no logos, no crest, no brand names, no text, no numbers" },
-
-    { "id": "coach_home", "category": "character", "rig": true, "priority": 3, "height_meters": 1.80,
-      "prompt": "Older Canadian hockey coach, around 55, stocky build, standing. Short grey hair, a grey moustache, weathered serious face. He wears a royal-blue team coaching jacket over a collared shirt, dark trousers and shoes. Full body, neutral A-pose, arms slightly out, photorealistic detailed face and clothing, game-ready.",
-      "texture_prompt": "photorealistic older skin with pores and wrinkles, short grey hair and grey moustache, plain royal-blue coaching jacket fabric, no logos, no brand names, no text" },
-
-    { "id": "referee", "category": "character", "rig": true, "priority": 3, "height_meters": 1.82,
-      "prompt": "Ice-hockey referee, athletic build, around 40. Short dark hair, clean-shaven, serious face. He wears a black-and-white vertically striped referee jersey, black trousers, plain orange armbands on the upper arms, and ice skates. Full body, neutral A-pose, arms slightly out, photorealistic detailed face and clothing, game-ready.",
-      "texture_prompt": "photorealistic skin with pores, short dark hair, black-and-white vertical-striped referee jersey fabric with plain orange armbands, no logos, no brand names, no text, no numbers" },
-
-    { "id": "trophy", "category": "prop", "rig": false, "hd_texture": false, "topology": "triangle", "priority": 3, "target_polycount": 12000,
+      "texture_prompt": "photorealistic burnt-orange and black goalie pads and jersey fabric, plain goalie mask with a simple original paint design, no logos, no crest, no brand names, no text, no numbers",
+      "negative_prompt": "nike, adidas, reebok, NHL, real team logo, sponsor logo, brand name, watermark, signature, jersey number, text, lettering, american football, football, shoulder pads, cleats, sneakers, blurry, deformed, disfigured, extra limbs, extra fingers, mannequin, plastic skin, cartoon, lowpoly, toy"
+    },
+    {
+      "id": "coach_home",
+      "category": "character",
+      "rig": true,
+      "priority": 3,
+      "height_meters": 1.8,
+      "prompt": "Older Canadian hockey coach, around 55, stocky build, standing. Short grey hair, a grey moustache, weathered serious face. He wears a royal-blue team coaching jacket over a collared shirt, dark trousers and shoes. Bare head, hair visible, no helmet. Full body, neutral A-pose, arms slightly out, photorealistic detailed face and clothing, game-ready.",
+      "texture_prompt": "photorealistic older skin with pores and wrinkles, short grey hair and grey moustache, plain royal-blue coaching jacket fabric, no logos, no brand names, no text"
+    },
+    {
+      "id": "referee",
+      "category": "character",
+      "rig": true,
+      "priority": 3,
+      "height_meters": 1.82,
+      "prompt": "Ice-hockey referee, athletic build, around 40. Short dark hair, clean-shaven, serious face. He wears a black-and-white vertically striped referee jersey, black trousers, plain orange armbands on the upper arms, and ice skates. Bare head, hair visible, no helmet. Full body, neutral A-pose, arms slightly out, photorealistic detailed face and clothing, game-ready.",
+      "texture_prompt": "photorealistic skin with pores, short dark hair, black-and-white vertical-striped referee jersey fabric with plain orange armbands, no logos, no brand names, no text, no numbers"
+    },
+    {
+      "id": "trophy",
+      "category": "prop",
+      "rig": false,
+      "hd_texture": false,
+      "topology": "triangle",
+      "priority": 3,
+      "target_polycount": 12000,
       "prompt": "A large silver ice-hockey championship trophy, an ornate two-handled metal cup on a tiered base, polished reflective silver, no text or engraving, realistic, game-ready.",
-      "texture_prompt": "polished reflective silver metal, no text, no engraving, no logo" },
-
-    { "id": "ice_resurfacer", "category": "prop", "rig": false, "hd_texture": false, "topology": "triangle", "priority": 3, "target_polycount": 20000,
+      "texture_prompt": "polished reflective silver metal, no text, no engraving, no logo"
+    },
+    {
+      "id": "ice_resurfacer",
+      "category": "prop",
+      "rig": false,
+      "hd_texture": false,
+      "topology": "triangle",
+      "priority": 3,
+      "target_polycount": 20000,
       "prompt": "An ice-resurfacing machine: a boxy blue ice-resurfacer vehicle with a large rear resurfacing unit, a driver seat and steering wheel, four wheels, plain blue bodywork, no logo or text, realistic, game-ready.",
-      "texture_prompt": "plain blue painted bodywork with grey mechanical details, no logo, no brand name, no text" }
+      "texture_prompt": "plain blue painted bodywork with grey mechanical details, no logo, no brand name, no text"
+    }
   ]
 }
