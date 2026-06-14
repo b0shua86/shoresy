@@ -1,0 +1,211 @@
+{
+  "_comment": "Original, IP-free assets for the hockey project. All characters are generic archetypes described purely by appearance; no real people, shows, teams, or trademarks are referenced. Home team = teal/white, Away team = red/black. priority 1 = essential (generate first to validate), 2 = roster depth, 3 = nice-to-have.",
+  "defaults": {
+    "ai_model": "meshy-5",
+    "model_type": "standard",
+    "topology": "triangle",
+    "target_polycount": 30000,
+    "target_formats": ["fbx", "glb"],
+    "enable_pbr": true,
+    "hd_texture": false,
+    "rig": false
+  },
+  "assets": [
+    {
+      "id": "skater_home_enforcer",
+      "category": "character",
+      "rig": true,
+      "priority": 1,
+      "topology": "quad",
+      "pose_mode": "a-pose",
+      "target_polycount": 40000,
+      "height_meters": 1.88,
+      "prompt": "Stocky, powerfully built male ice-hockey player in his early 30s, broad shoulders and a thick neck, a full bushy dark-brown beard, short buzzed black hair, heavy brow and an intense scowl. Wearing a teal and white senior-league hockey uniform: padded jersey, shoulder pads, padded shorts, shin guards, and ice skates. Full body, neutral A-pose with arms slightly away from the body, empty hands, symmetrical, realistic human proportions, photorealistic PBR materials, game-ready character."
+    },
+    {
+      "id": "skater_home_captain",
+      "category": "character",
+      "rig": true,
+      "priority": 1,
+      "topology": "quad",
+      "pose_mode": "a-pose",
+      "target_polycount": 40000,
+      "height_meters": 1.83,
+      "prompt": "Lean, weathered male ice-hockey player in his late 30s, short salt-and-pepper hair, a strong square jaw with light stubble, calm confident expression. Wearing a teal and white hockey uniform with a captain's letter C on the chest, full pads and ice skates. Full body, neutral A-pose with arms slightly away from the body, empty hands, symmetrical, realistic human proportions, photorealistic PBR materials, game-ready character."
+    },
+    {
+      "id": "skater_home_winger",
+      "category": "character",
+      "rig": true,
+      "priority": 1,
+      "topology": "quad",
+      "pose_mode": "a-pose",
+      "target_polycount": 40000,
+      "height_meters": 1.78,
+      "prompt": "Wiry, athletic young male ice-hockey player in his early 20s, clean-shaven with tousled sandy-blond hair and an eager grin. Wearing a teal and white hockey uniform with full pads and ice skates. Full body, neutral A-pose with arms slightly away from the body, empty hands, symmetrical, realistic human proportions, photorealistic PBR materials, game-ready character."
+    },
+    {
+      "id": "skater_home_grinder",
+      "category": "character",
+      "rig": true,
+      "priority": 2,
+      "topology": "quad",
+      "pose_mode": "a-pose",
+      "target_polycount": 40000,
+      "height_meters": 1.80,
+      "prompt": "Lanky male ice-hockey player in his mid-20s with a thick bushy mustache and a mullet haircut, a sly smirk. Wearing a teal and white hockey uniform with full pads and ice skates. Full body, neutral A-pose with arms slightly away from the body, empty hands, symmetrical, realistic human proportions, photorealistic PBR materials, game-ready character."
+    },
+    {
+      "id": "skater_home_defender",
+      "category": "character",
+      "rig": true,
+      "priority": 2,
+      "topology": "quad",
+      "pose_mode": "a-pose",
+      "target_polycount": 40000,
+      "height_meters": 1.90,
+      "prompt": "Tall, heavy-set male ice-hockey defenseman in his late 20s, short reddish-brown hair and a matching beard, stern serious face, very broad build. Wearing a teal and white hockey uniform with full pads and ice skates. Full body, neutral A-pose with arms slightly away from the body, empty hands, symmetrical, realistic human proportions, photorealistic PBR materials, game-ready character."
+    },
+    {
+      "id": "skater_home_rookie",
+      "category": "character",
+      "rig": true,
+      "priority": 2,
+      "topology": "quad",
+      "pose_mode": "a-pose",
+      "target_polycount": 40000,
+      "height_meters": 1.77,
+      "prompt": "Slim male ice-hockey rookie in his late teens, short neat brown hair, clean-shaven, a slightly nervous but hopeful expression, crisp fresh gear. Wearing a teal and white hockey uniform with full pads and ice skates. Full body, neutral A-pose with arms slightly away from the body, empty hands, symmetrical, realistic human proportions, photorealistic PBR materials, game-ready character."
+    },
+    {
+      "id": "skater_away_captain",
+      "category": "character",
+      "rig": true,
+      "priority": 1,
+      "topology": "quad",
+      "pose_mode": "a-pose",
+      "target_polycount": 40000,
+      "height_meters": 1.85,
+      "prompt": "Muscular male ice-hockey player in his early 30s, slicked-back dark hair and a sharp goatee, an arrogant sneer. Wearing a red and black rival hockey uniform with full pads and ice skates. Full body, neutral A-pose with arms slightly away from the body, empty hands, symmetrical, realistic human proportions, photorealistic PBR materials, game-ready character."
+    },
+    {
+      "id": "skater_away_winger",
+      "category": "character",
+      "rig": true,
+      "priority": 1,
+      "topology": "quad",
+      "pose_mode": "a-pose",
+      "target_polycount": 40000,
+      "height_meters": 1.80,
+      "prompt": "Athletic male ice-hockey player in his mid-20s with a tight buzz cut, clean-shaven, a cocky grin. Wearing a red and black hockey uniform with full pads and ice skates. Full body, neutral A-pose with arms slightly away from the body, empty hands, symmetrical, realistic human proportions, photorealistic PBR materials, game-ready character."
+    },
+    {
+      "id": "skater_away_enforcer",
+      "category": "character",
+      "rig": true,
+      "priority": 2,
+      "topology": "quad",
+      "pose_mode": "a-pose",
+      "target_polycount": 40000,
+      "height_meters": 1.92,
+      "prompt": "Huge, intimidating male ice-hockey enforcer in his early 30s, shaved head, thick dark stubble, a flattened broken-nose look and a menacing glare. Wearing a red and black hockey uniform with full pads and ice skates. Full body, neutral A-pose with arms slightly away from the body, empty hands, symmetrical, realistic human proportions, photorealistic PBR materials, game-ready character."
+    },
+    {
+      "id": "skater_away_grinder",
+      "category": "character",
+      "rig": true,
+      "priority": 2,
+      "topology": "quad",
+      "pose_mode": "a-pose",
+      "target_polycount": 40000,
+      "height_meters": 1.82,
+      "prompt": "Stocky male ice-hockey player in his late 20s, short dark hair and a chin-strap beard, a hard scowl. Wearing a red and black hockey uniform with full pads and ice skates. Full body, neutral A-pose with arms slightly away from the body, empty hands, symmetrical, realistic human proportions, photorealistic PBR materials, game-ready character."
+    },
+    {
+      "id": "goalie_home",
+      "category": "character",
+      "rig": true,
+      "priority": 1,
+      "topology": "quad",
+      "pose_mode": "a-pose",
+      "target_polycount": 45000,
+      "height_meters": 1.85,
+      "prompt": "Male ice-hockey goaltender in full goaltending equipment: large rectangular leg pads, a bulky chest-and-arm protector, a rectangular blocker pad on one hand and a catching glove on the other, and a goalie mask painted with a bold geometric teal and white pattern. Teal and white team colors, ice skates. Full body, standing upright with arms slightly away from the body, symmetrical, realistic human proportions, photorealistic PBR materials, game-ready character."
+    },
+    {
+      "id": "goalie_away",
+      "category": "character",
+      "rig": true,
+      "priority": 2,
+      "topology": "quad",
+      "pose_mode": "a-pose",
+      "target_polycount": 45000,
+      "height_meters": 1.85,
+      "prompt": "Male ice-hockey goaltender in full goaltending equipment: large rectangular leg pads, a bulky chest-and-arm protector, a blocker pad on one hand and a catching glove on the other, and a goalie mask painted with a bold geometric red and black pattern. Red and black team colors, ice skates. Full body, standing upright with arms slightly away from the body, symmetrical, realistic human proportions, photorealistic PBR materials, game-ready character."
+    },
+    {
+      "id": "coach_home",
+      "category": "character",
+      "rig": true,
+      "priority": 3,
+      "topology": "quad",
+      "pose_mode": "a-pose",
+      "target_polycount": 35000,
+      "height_meters": 1.80,
+      "prompt": "Older heavy-set male hockey coach in his 50s with a thick gray mustache, wearing a ball cap, a zip-up track jacket and track pants, with a gruff no-nonsense expression. Full body, neutral A-pose with arms slightly away from the body, symmetrical, realistic human proportions, photorealistic PBR materials, game-ready character."
+    },
+    {
+      "id": "referee",
+      "category": "character",
+      "rig": true,
+      "priority": 3,
+      "topology": "quad",
+      "pose_mode": "a-pose",
+      "target_polycount": 35000,
+      "height_meters": 1.83,
+      "prompt": "Male ice-hockey referee wearing a black-and-white vertical striped shirt, black trousers, a black helmet with a visor, and ice skates, with a neutral authoritative expression. Full body, neutral A-pose with arms slightly away from the body, empty hands, symmetrical, realistic human proportions, photorealistic PBR materials, game-ready character."
+    },
+    {
+      "id": "prop_puck",
+      "category": "prop",
+      "priority": 1,
+      "target_polycount": 6000,
+      "prompt": "A regulation ice-hockey puck: a solid black vulcanized rubber disc with flat top and bottom and a lightly textured diamond-knurled rim, with a few subtle scuffs. Realistic proportions, photorealistic PBR materials, game-ready prop."
+    },
+    {
+      "id": "prop_net",
+      "category": "prop",
+      "priority": 1,
+      "target_polycount": 18000,
+      "prompt": "A regulation ice-hockey goal: a red tubular steel frame with a curved back, a white nylon mesh net, and a white base trim. Realistic proportions, photorealistic PBR materials, game-ready prop."
+    },
+    {
+      "id": "prop_stick_player",
+      "category": "prop",
+      "priority": 1,
+      "target_polycount": 5000,
+      "prompt": "A modern one-piece composite ice-hockey stick with a long straight shaft and a slightly curved blade, matte black with teal accents and a taped blade. Realistic proportions, photorealistic PBR materials, game-ready prop."
+    },
+    {
+      "id": "prop_stick_goalie",
+      "category": "prop",
+      "priority": 2,
+      "target_polycount": 6000,
+      "prompt": "A goaltender ice-hockey stick with a wide flat paddle on the lower shaft and a curved taped blade, matte black with teal accents. Realistic proportions, photorealistic PBR materials, game-ready prop."
+    },
+    {
+      "id": "prop_trophy",
+      "category": "prop",
+      "priority": 3,
+      "target_polycount": 20000,
+      "prompt": "A championship ice-hockey trophy: a large polished silver cup with two curved handles mounted on a dark wooden base ringed with small engraved nameplates. Realistic proportions, photorealistic PBR materials, game-ready prop."
+    },
+    {
+      "id": "prop_zamboni",
+      "category": "prop",
+      "priority": 3,
+      "target_polycount": 30000,
+      "prompt": "A boxy ice-resurfacing machine with an enclosed driver cab, a large rear resurfacing unit, four wheels, painted blue with white trim. Realistic proportions, photorealistic PBR materials, game-ready vehicle prop."
+    }
+  ]
+}
