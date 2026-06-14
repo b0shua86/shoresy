@@ -1,0 +1,21 @@
+{
+    "name": "Hockey.Boot",
+    "rootNamespace": "Hockey.Boot",
+    "references": [
+        "Hockey.Core",
+        "Hockey.Gameplay",
+        "Hockey.AI",
+        "Hockey.Presentation",
+        "Hockey.UI",
+        "Hockey.Audio"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

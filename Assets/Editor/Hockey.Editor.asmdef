@@ -1,0 +1,24 @@
+{
+    "name": "Hockey.Editor",
+    "rootNamespace": "Hockey.Editor",
+    "references": [
+        "Hockey.Core",
+        "Hockey.Gameplay",
+        "Hockey.AI",
+        "Hockey.Presentation",
+        "Hockey.UI",
+        "Hockey.Audio",
+        "Hockey.Boot"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

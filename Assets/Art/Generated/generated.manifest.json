@@ -1,3 +1,16 @@
 {
-  "assets": []
+  "assets": [
+    {
+      "id": "skater_home_enforcer",
+      "category": "character",
+      "rig": true,
+      "dir": "Assets/Art/Generated/skater_home_enforcer"
+    },
+    {
+      "id": "skater_home_captain",
+      "category": "character",
+      "rig": true,
+      "dir": "Assets/Art/Generated/skater_home_captain"
+    }
+  ]
 }

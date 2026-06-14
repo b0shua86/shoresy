@@ -1,0 +1,17 @@
+{
+    "name": "Hockey.Gameplay",
+    "rootNamespace": "Hockey.Gameplay",
+    "references": [
+        "Hockey.Core",
+        "Unity.InputSystem"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

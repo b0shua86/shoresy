@@ -125,8 +125,10 @@ def load_state():
 
 def save_state(s):
     os.makedirs(WORK, exist_ok=True)
-    with open(STATE_PATH, "w") as f:
+    tmp = STATE_PATH + ".tmp"
+    with open(tmp, "w") as f:
         json.dump(s, f, indent=2)
+    os.replace(tmp, STATE_PATH)  # atomic: safe to read state.json while a run is in progress
 
 
 # ----------------------------------------------------------------------------- meshy calls
@@ -180,16 +182,14 @@ def save_model(task, outdir):
 def save_rig(task, outdir):
     os.makedirs(outdir, exist_ok=True)
     res = task.get("result") or {}
+    # FBX only — it is the native Unity import path; skipping the GLB twins halves repo size.
     if res.get("rigged_character_fbx_url"):
         download(res["rigged_character_fbx_url"], os.path.join(outdir, "character_rigged.fbx"))
-    if res.get("rigged_character_glb_url"):
-        download(res["rigged_character_glb_url"], os.path.join(outdir, "character_rigged.glb"))
     anims = res.get("basic_animations") or {}
     for name in ("walking", "running"):
-        for fmt in ("fbx", "glb"):
-            u = anims.get(f"{name}_{fmt}_url")
-            if u:
-                download(u, os.path.join(outdir, f"anim_{name}.{fmt}"))
+        u = anims.get(f"{name}_fbx_url")
+        if u:
+            download(u, os.path.join(outdir, f"anim_{name}.fbx"))
 
 
 # ----------------------------------------------------------------------------- pipeline
@@ -228,6 +228,8 @@ def run_asset(asset, defaults, state, args):
         }
         if cfg.get("pose_mode"):
             body["pose_mode"] = cfg["pose_mode"]
+        if cfg.get("negative_prompt"):
+            body["negative_prompt"] = cfg["negative_prompt"]
         st["preview_id"] = create_t23d(body)
         save_state(state)
         log(f"{aid}: preview task created {st['preview_id']}")
