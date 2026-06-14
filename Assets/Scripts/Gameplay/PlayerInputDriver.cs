@@ -41,7 +41,7 @@ namespace Hockey.Gameplay
             if (!inPlay) return;
             if (ShootPressed()) Controlled.Shoot(AimDir());
             if (PassPressed()) Controlled.Pass(FindPassTarget());
-            if (CheckPressed()) { /* checking arrives with the contact milestone */ }
+            if (CheckPressed()) Controlled.TryCheck();
             if (SwitchPressed()) SwitchTo(NearestToPuck());
         }
 

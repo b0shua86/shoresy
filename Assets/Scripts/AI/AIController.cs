@@ -55,6 +55,15 @@ namespace Hockey.AI
             _self.SetMoveInput(input);
             _self.SetSprint(to.magnitude > 6f);
 
+            // Throw a hit when forechecking the opponent's puck carrier.
+            var oppCarrier = mm.Puck.Carrier;
+            if (oppCarrier != null && oppCarrier.Team != _self.Team && !_self.HasPuck && !_self.IsGoalie)
+            {
+                float d = Vector3.Distance(transform.position, oppCarrier.transform.position);
+                if (d < SkaterController.CheckRange + 0.3f && Random.value < Skill.aggression * 0.2f)
+                    _self.TryCheck();
+            }
+
             if (_self.HasPuck)
             {
                 if (_wantShoot)

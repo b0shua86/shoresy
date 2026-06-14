@@ -133,5 +133,40 @@ namespace Hockey.Gameplay
             _stunnedUntil = Mathf.Max(_stunnedUntil, Time.time + seconds);
             if (HasPuck) MatchManager.Instance.Puck.Release(PlanarVelocity * 0.5f);
         }
+
+        public const float CheckRange = 1.7f;
+        public const float MinCheckSpeed = 4f;
+
+        /// <summary>Throw a body check: if moving fast enough with an opponent just ahead, knock them down.</summary>
+        public void TryCheck()
+        {
+            var mm = MatchManager.Instance;
+            if (mm == null || PlanarVelocity.magnitude < MinCheckSpeed) return;
+            SkaterController target = null;
+            float best = CheckRange;
+            foreach (var s in mm.Skaters)
+            {
+                if (s == null || s == this || s.Team == Team || s.IsGoalie) continue;
+                Vector3 to = s.transform.position - transform.position; to.y = 0f;
+                float d = to.magnitude;
+                if (d > best) continue;
+                Vector3 toN = to.sqrMagnitude > 0.001f ? to.normalized : transform.forward;
+                if (Vector3.Dot(transform.forward, toN) < 0.4f) continue; // must be in front
+                best = d; target = s;
+            }
+            if (target != null)
+            {
+                Vector3 dir = target.transform.position - transform.position; dir.y = 0f;
+                if (dir.sqrMagnitude < 0.001f) dir = transform.forward;
+                target.ReceiveHit(dir.normalized, PlanarVelocity.magnitude);
+            }
+        }
+
+        /// <summary>Take a hit: get knocked back and briefly stunned (dropping the puck).</summary>
+        public void ReceiveHit(Vector3 dir, float power)
+        {
+            Stun(0.8f);
+            if (Body != null) Body.AddForce(dir * Mathf.Clamp(power, 4f, 12f) * 16f, ForceMode.Impulse);
+        }
     }
 }
