@@ -44,6 +44,17 @@ namespace Hockey.Gameplay
         public string NameA => _a != null ? _a.Name : "";
         public string NameB => _b != null ? _b.Name : "";
 
+        /// <summary>Midpoint of the two fighters, for the camera to push in on.</summary>
+        public Vector3 FocusPoint
+        {
+            get
+            {
+                Vector3 a = _a != null && _a.sk != null ? _a.sk.transform.position : Vector3.zero;
+                Vector3 b = _b != null && _b.sk != null ? _b.sk.transform.position : Vector3.zero;
+                Vector3 m = (a + b) * 0.5f; m.y = 0f; return m;
+            }
+        }
+
         public void Begin(SkaterController a, SkaterController b, System.Action<SkaterController, SkaterController> onDone)
         {
             _a = new Side { sk = a };

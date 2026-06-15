@@ -1,4 +1,5 @@
 using UnityEngine;
+using Hockey.Core;
 using Hockey.Gameplay;
 
 namespace Hockey.Presentation
@@ -21,10 +22,18 @@ namespace Hockey.Presentation
         {
             var mm = MatchManager.Instance;
             if (mm == null) return;
-            Vector3 focus = mm.Puck != null ? mm.Puck.transform.position : Vector3.zero;
+
+            // Push in on a fight; otherwise chase the puck.
+            var fight = mm.ActiveFight;
+            bool inFight = mm.Phase == MatchPhase.Fight && fight != null;
+            Vector3 focus = inFight ? fight.FocusPoint
+                : (mm.Puck != null ? mm.Puck.transform.position : Vector3.zero);
             focus.y = 0f;
 
-            Vector3 desired = new Vector3(focus.x * xDamp, height, focus.z - backDistance);
+            float camHeight = inFight ? 5f : height;
+            float back = inFight ? 8f : backDistance;
+            float sideDamp = inFight ? 1f : xDamp;
+            Vector3 desired = new Vector3(focus.x * sideDamp, camHeight, focus.z - back);
             transform.position = Vector3.Lerp(transform.position, desired, 1f - Mathf.Exp(-posLerp * Time.deltaTime));
 
             Quaternion look = Quaternion.LookRotation((focus + Vector3.up) - transform.position, Vector3.up);
