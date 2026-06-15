@@ -6,11 +6,11 @@ running in parallel**. Each milestone leaves the project in a playable/runnable 
 Legend: ☐ todo · ◐ in progress · ☑ done
 
 **Current status (mid-build):** a full match is playable from code — skating, puck,
-passing/shooting, **body checking + stamina**, role-based AI lines, goalies,
-faceoffs/periods/clock/score, HUD, and a pause menu with **live difficulty**. The full
-Meshy roster (**14 characters + 5 props**) is generated, committed, and wired into the
-match via a one-click editor builder. Up next: the **fight minigame**, **penalties**,
-and broadcast presentation.
+passing/shooting, **body checking + stamina**, a **drop-the-gloves fight minigame**,
+role-based AI lines, goalies, faceoffs/periods/clock/score, HUD, and a pause menu with
+**live difficulty**. The full Meshy roster (**14 characters + 5 props**) is generated,
+committed, and wired into the match via a one-click editor builder. Up next:
+**penalties / power plays**, a team crest + number decal, and broadcast presentation.
 
 ## M0 — Foundation
 - ☑ Repo + Unity 6000.4.11f1 pin, URP/Input System/Cinemachine manifest, `.gitignore`
@@ -45,8 +45,9 @@ and broadcast presentation.
 - ☐ Stumble/fall animation states
 
 ## M5 — Fight minigame
-- ☐ Drop-the-gloves brawl: block / dodge / jab / haymaker / stamina
-- ☐ Win/lose + clean hand-off to and from the match
+- ☑ Drop-the-gloves brawl: jab / haymaker / block / dodge, all stamina-gated (`FightController`)
+- ☑ Win/lose + clean hand-off to/from the match (drop gloves with **G** near an opponent; loser serves a sit)
+- ☐ Punch/stagger animations + camera push-in + crowd reaction
 
 ## M6 — Broadcast presentation
 - ◐ IMGUI scorebug, controls hint, GOAL/FACE-OFF/result stings, energy bar

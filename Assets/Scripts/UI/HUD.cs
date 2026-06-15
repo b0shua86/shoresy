@@ -46,7 +46,7 @@ namespace Hockey.UI
 
             GUI.Label(new Rect(12f, 8f, 460f, 120f),
                 $"Difficulty: {mm.Config.difficulty}   (Esc / Start = pause + difficulty)\n" +
-                "Move WASD / L-Stick · Sprint Shift · Shoot Space · Pass E · Check F · Switch Tab",
+                "Move WASD · Sprint Shift · Shoot Space · Pass E · Check F · Drop gloves G · Switch Tab",
                 _small);
 
             // Energy bar for the skater you're controlling.
