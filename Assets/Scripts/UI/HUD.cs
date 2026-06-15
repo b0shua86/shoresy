@@ -63,6 +63,22 @@ namespace Hockey.UI
                 GUI.Label(new Rect(bx, by - 17f, bw, 16f), "ENERGY", _small);
             }
 
+            // Drop-the-gloves brawl overlay.
+            var fight = mm.ActiveFight;
+            if (mm.Phase == MatchPhase.Fight && fight != null)
+            {
+                float fw = 440f, fx = (Screen.width - fw) * 0.5f, fy = Screen.height * 0.40f;
+                GUI.Box(new Rect(fx - 12f, fy - 30f, fw + 24f, 170f), "FIGHT!");
+                GUI.Label(new Rect(fx, fy - 6f, 200f, 18f), fight.NameA, _small);
+                GUI.Label(new Rect(fx + fw - 200f, fy - 6f, 200f, 18f), fight.NameB, _small);
+                DrawBar(fx, fy + 14f, 200f, 16f, fight.HpA, new Color(0.85f, 0.2f, 0.2f));
+                DrawBar(fx, fy + 34f, 200f, 9f, fight.StA, new Color(0.9f, 0.8f, 0.2f));
+                DrawBar(fx + fw - 200f, fy + 14f, 200f, 16f, fight.HpB, new Color(0.85f, 0.2f, 0.2f));
+                DrawBar(fx + fw - 200f, fy + 34f, 200f, 9f, fight.StB, new Color(0.9f, 0.8f, 0.2f));
+                GUI.Label(new Rect(fx, fy + 58f, fw, 26f), fight.Message, _bug);
+                GUI.Label(new Rect(fx, fy + 96f, fw, 36f), "Jab Space · Haymaker F · Block hold Shift · Dodge Tab", _small);
+            }
+
             if (Time.unscaledTime < _goalFlashUntil)
             {
                 var prev = GUI.color;
@@ -80,6 +96,16 @@ namespace Hockey.UI
                     : (mm.Score[0] > mm.Score[1] ? "HOME WINS" : "AWAY WINS");
                 GUI.Label(new Rect(0f, Screen.height * 0.35f, Screen.width, 100f), result, _big);
             }
+        }
+
+        static void DrawBar(float x, float y, float w, float h, float t, Color c)
+        {
+            var prev = GUI.color;
+            GUI.color = new Color(0f, 0f, 0f, 0.5f);
+            GUI.DrawTexture(new Rect(x - 2f, y - 2f, w + 4f, h + 4f), Texture2D.whiteTexture);
+            GUI.color = c;
+            GUI.DrawTexture(new Rect(x, y, w * Mathf.Clamp01(t), h), Texture2D.whiteTexture);
+            GUI.color = prev;
         }
     }
 }

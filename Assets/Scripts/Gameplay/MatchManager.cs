@@ -26,6 +26,9 @@ namespace Hockey.Gameplay
         public MatchPhase Phase = MatchPhase.PreGame;
         public Difficulty Difficulty => Config != null ? Config.difficulty : Difficulty.Pro;
 
+        /// <summary>Active drop-the-gloves brawl; non-null only during <c>MatchPhase.Fight</c>.</summary>
+        public FightController ActiveFight { get; private set; }
+
         public event Action<TeamSide> GoalScored;
         public event Action PhaseChanged;
 
@@ -97,6 +100,28 @@ namespace Hockey.Gameplay
             GoalScored?.Invoke(scoringSide);
             SetPhase(MatchPhase.Faceoff);
             _faceoffAt = Time.time + 2.0f;
+            ResetForFaceoff();
+        }
+
+        /// <summary>Drop the gloves: pauses the play and starts a brawl between two skaters.</summary>
+        public void StartFight(SkaterController initiator, SkaterController opponent)
+        {
+            if (Phase != MatchPhase.Play || initiator == null || opponent == null) return;
+            if (initiator.IsGoalie || opponent.IsGoalie || initiator.Team == opponent.Team) return;
+            if (Puck != null) Puck.SetCarrier(null);
+            SetPhase(MatchPhase.Fight);
+            var go = new GameObject("Fight");
+            go.transform.SetParent(transform);
+            ActiveFight = go.AddComponent<FightController>();
+            ActiveFight.Begin(initiator, opponent, OnFightDone);
+        }
+
+        void OnFightDone(SkaterController winner, SkaterController loser)
+        {
+            if (ActiveFight != null) { Destroy(ActiveFight.gameObject); ActiveFight = null; }
+            if (loser != null) loser.Stun(5f); // loser sits it off, like a penalty
+            SetPhase(MatchPhase.Faceoff);
+            _faceoffAt = Time.time + 2.5f;
             ResetForFaceoff();
         }
 

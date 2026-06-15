@@ -42,6 +42,11 @@ namespace Hockey.Gameplay
             if (ShootPressed()) Controlled.Shoot(AimDir());
             if (PassPressed()) Controlled.Pass(FindPassTarget());
             if (CheckPressed()) Controlled.TryCheck();
+            if (DropGlovesPressed())
+            {
+                var opp = NearestOpponent(2.4f);
+                if (opp != null) { mm.StartFight(Controlled, opp); return; }
+            }
             if (SwitchPressed()) SwitchTo(NearestToPuck());
         }
 
@@ -103,6 +108,14 @@ namespace Hockey.Gameplay
             return gp != null && gp.buttonEast.wasPressedThisFrame;
         }
 
+        static bool DropGlovesPressed()
+        {
+            var kb = Keyboard.current;
+            if (kb != null && kb.gKey.wasPressedThisFrame) return true;
+            var gp = Gamepad.current;
+            return gp != null && gp.rightShoulder.wasPressedThisFrame;
+        }
+
         static bool SwitchPressed()
         {
             var kb = Keyboard.current;
@@ -157,6 +170,19 @@ namespace Hockey.Gameplay
             {
                 if (s == null || s.Team != Controlled.Team || s.IsGoalie) continue;
                 float d = Vector3.Distance(s.transform.position, pp);
+                if (d < bestD) { bestD = d; best = s; }
+            }
+            return best;
+        }
+
+        SkaterController NearestOpponent(float maxDist)
+        {
+            var mm = MatchManager.Instance;
+            SkaterController best = null; float bestD = maxDist;
+            foreach (var s in mm.Skaters)
+            {
+                if (s == null || s.Team == Controlled.Team || s.IsGoalie) continue;
+                float d = Vector3.Distance(s.transform.position, Controlled.transform.position);
                 if (d < bestD) { bestD = d; best = s; }
             }
             return best;
