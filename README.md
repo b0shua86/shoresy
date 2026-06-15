@@ -48,9 +48,25 @@ ROADMAP.md              Milestones and build sequence
 2. Clone this branch and open the folder as a Unity project. On first open Unity
    restores packages and regenerates the local `Library/` (gitignored); it may
    migrate package versions to those bundled with the editor.
-3. Open `Assets/Scenes/Main.unity` and press **Play**. A bootstrapper constructs
+3. *(First time, to see the generated characters)* run **menu: Shoresy ▸ Build
+   Character Prefabs & Anims**. It turns the Meshy FBX under `Assets/Art/Generated`
+   into prefabs in `Assets/Resources/Characters` with walk→run locomotion. Skip it
+   and the game still runs with capsule placeholders.
+4. Open `Assets/Scenes/Main.unity` and press **Play**. A bootstrapper constructs
    the rink, players, puck, camera, and HUD at runtime, so the game is playable
    without hand-wiring a scene.
+
+### Controls
+
+| Action | Keyboard | Gamepad |
+|---|---|---|
+| Move | WASD | Left stick |
+| Sprint | Shift | L3 (stick press) |
+| Shoot | Space | A / South |
+| Pass | E | X / West |
+| Check | F | B / East |
+| Switch player | Tab | Y / North |
+| Pause + difficulty | Esc | Start |
 
 > This repository was scaffolded in a headless CI-style environment without the
 > Unity Editor (no editor launch, compile, art import, or platform builds happen
@@ -65,6 +81,11 @@ See [`Tools/meshy/README.md`](Tools/meshy/README.md). In short:
 export MESHY_API_KEY="msy-..."
 python3 Tools/meshy/generate.py --max-priority 1   # essentials first
 ```
+
+The full roster (**14 characters + 5 props**) is already generated and committed under
+`Assets/Art/Generated/` — meshy-6 with HD textures, **Home royal-blue/white** vs
+**Away burnt-orange/black**, jerseys deliberately crest-free (a team crest + numbers go
+on as a Unity decal). All assets are original and IP-free.
 
 ## Roadmap
 
