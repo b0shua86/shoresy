@@ -46,6 +46,13 @@ namespace Hockey.Gameplay
         bool _sprint;
         float _stunnedUntil;
 
+        /// <summary>0..1 energy. Sprinting and big hits burn it; cruising recovers it. 0 = no sprint.</summary>
+        public float Stamina { get; private set; } = 1f;
+        const float StaminaDrainPerSec = 0.28f;
+        const float StaminaRegenPerSec = 0.18f;
+        const float CheckStaminaCost = 0.25f;
+        const float MinSprintStamina = 0.05f;
+
         public void Configure(SkatingTuning tuning, float speedScale = 1f)
         {
             _tuning = tuning;
@@ -79,7 +86,11 @@ namespace Hockey.Gameplay
                 return;
             }
 
-            float topSpeed = _tuning.maxSpeed * _speedScale * (_sprint ? _tuning.sprintMultiplier : 1f);
+            bool sprinting = _sprint && inputMag > 0.05f && Stamina > MinSprintStamina;
+            float topSpeed = _tuning.maxSpeed * _speedScale * (sprinting ? _tuning.sprintMultiplier : 1f);
+
+            // Stamina drains while sprinting, recovers otherwise.
+            Stamina = Mathf.Clamp01(Stamina + (sprinting ? -StaminaDrainPerSec : StaminaRegenPerSec) * dt);
 
             if (inputMag > 0.05f)
             {
@@ -159,6 +170,7 @@ namespace Hockey.Gameplay
                 Vector3 dir = target.transform.position - transform.position; dir.y = 0f;
                 if (dir.sqrMagnitude < 0.001f) dir = transform.forward;
                 target.ReceiveHit(dir.normalized, PlanarVelocity.magnitude);
+                Stamina = Mathf.Max(0f, Stamina - CheckStaminaCost); // throwing a hit costs energy
             }
         }
 
