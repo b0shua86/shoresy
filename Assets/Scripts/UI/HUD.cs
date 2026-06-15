@@ -46,8 +46,22 @@ namespace Hockey.UI
 
             GUI.Label(new Rect(12f, 8f, 460f, 120f),
                 $"Difficulty: {mm.Config.difficulty}   (Esc / Start = pause + difficulty)\n" +
-                "Move WASD / L-Stick · Sprint Shift · Shoot Space · Pass E · Switch Tab",
+                "Move WASD / L-Stick · Sprint Shift · Shoot Space · Pass E · Check F · Switch Tab",
                 _small);
+
+            // Energy bar for the skater you're controlling.
+            var human = mm.Skaters.Find(s => s != null && s.IsHumanControlled);
+            if (human != null)
+            {
+                float bw = 200f, bh = 14f, bx = 16f, by = Screen.height - 28f;
+                var prevC = GUI.color;
+                GUI.color = new Color(0f, 0f, 0f, 0.5f);
+                GUI.DrawTexture(new Rect(bx - 2f, by - 2f, bw + 4f, bh + 4f), Texture2D.whiteTexture);
+                GUI.color = Color.Lerp(new Color(0.85f, 0.2f, 0.15f), new Color(0.3f, 0.85f, 0.3f), human.Stamina);
+                GUI.DrawTexture(new Rect(bx, by, bw * Mathf.Clamp01(human.Stamina), bh), Texture2D.whiteTexture);
+                GUI.color = prevC;
+                GUI.Label(new Rect(bx, by - 17f, bw, 16f), "ENERGY", _small);
+            }
 
             if (Time.unscaledTime < _goalFlashUntil)
             {
