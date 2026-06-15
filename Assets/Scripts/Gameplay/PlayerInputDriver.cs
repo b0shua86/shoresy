@@ -18,6 +18,9 @@ namespace Hockey.Gameplay
         void Start()
         {
             if (Controlled != null) Controlled.IsHumanControlled = true;
+            if (Keyboard.current == null && Gamepad.current == null)
+                Debug.LogWarning("[Input] Input System sees no keyboard/gamepad. Set " +
+                    "Edit > Project Settings > Player > Active Input Handling to 'Both', then restart Unity.");
         }
 
         void Update()

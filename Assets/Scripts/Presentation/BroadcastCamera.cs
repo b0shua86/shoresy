@@ -12,11 +12,11 @@ namespace Hockey.Presentation
     /// </summary>
     public class BroadcastCamera : MonoBehaviour
     {
-        public float height = 13f;
-        public float backDistance = 18f;
-        public float xDamp = 0.25f;     // how much the camera drifts sideways with the puck
-        public float posLerp = 4f;
-        public float lookLerp = 6f;
+        public float height = 16f;
+        public float backDistance = 21f;
+        public float xDamp = 0.15f;     // how much the camera drifts sideways with the puck
+        public float posLerp = 2.5f;
+        public float lookLerp = 3.5f;
 
         void LateUpdate()
         {
