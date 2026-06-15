@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 using Hockey.Core;
 using Hockey.Gameplay;
 using Hockey.AI;
@@ -164,8 +165,11 @@ namespace Hockey.Boot
 
         static Material SolidMat(Color c)
         {
-            Shader s = Shader.Find("Universal Render Pipeline/Lit");
+            // Pick the shader matching the ACTIVE pipeline; URP/Lit renders magenta under built-in.
+            bool srp = GraphicsSettings.currentRenderPipeline != null;
+            Shader s = srp ? Shader.Find("Universal Render Pipeline/Lit") : Shader.Find("Standard");
             if (s == null) s = Shader.Find("Standard");
+            if (s == null) s = Shader.Find("Sprites/Default");
             return new Material(s) { color = c };
         }
     }
